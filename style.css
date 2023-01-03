@@ -35,6 +35,8 @@
   --neutral-desaturated-color: hsl(224, 23%, 55%);
   --neutral-dark-color: hsl(223, 47%, 23%);
 
+  --link-active-state-color: hsl(245, 69%, 64%);
+
   --main-ff: 'Red Hat Display', sans-serif;
 
   --fw-medium: 500;
@@ -64,11 +66,12 @@ body {
 .container {
   background-color: white;
   max-width: 450px;
-  max-height: 700px;
+  max-height: min-content;
   border-radius: 1.5rem;
   /* Hide image corners that don't get border radius */
   overflow: hidden;
   box-shadow: 0px 20px 60px -30px var(--neutral-desaturated-color);
+  margin: 1rem;
 }
 
 .payment-summary {
@@ -87,7 +90,7 @@ body {
 h1 {
   font-weight: var(--fw-black);
   color: var(--neutral-dark-color);
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
 
 .description {
@@ -131,9 +134,9 @@ h1 {
   color: var(--primary-bright-color)
 }
 
-.confirm,
-.cancel {
-  margin: 1.2rem 0;
+.modify-plan a:hover {
+  text-decoration-line: none;
+  color: var(--link-active-state-color);
 }
 
 .confirm {
@@ -146,13 +149,48 @@ h1 {
   padding: 0.85rem 0;
   border-radius: 0.7rem;
   box-shadow: 0px 10px 30px -15px var(--primary-bright-color);
+  margin: 1.2rem 0;
+}
+
+.confirm:hover {
+  background-color: var(--link-active-state-color);
 }
 
 .cancel {
   width: max-content;
   font-weight: var(--fw-bold);
   text-decoration-line: none;
-  color: var(--neutral-desaturated-color)
+  color: var(--neutral-desaturated-color);
+  margin: 1.2rem 1.2rem 0 1.2rem;
+}
+
+.cancel:hover {
+  color: var(--neutral-dark-color);
+  font-weight: var(--fw-black);
+}
+
+@media screen and (max-width: 460px) {
+  body {
+    background-image: url(images/pattern-background-mobile.svg);
+    background-repeat: repeat-x;
+  }
+
+  .payment-summary {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .plan-order {
+    padding: 1rem;
+  }
+
+  .plan-order,
+  .plan-price p {
+    font-size: 0.9rem;
+  }
 }
 
 
