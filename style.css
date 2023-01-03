@@ -1,10 +1,9 @@
+/* CSS formatting */
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
   * {
     margin: 0;
   }
@@ -25,3 +24,57 @@
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
+
+/* CSS properties */
+
+:root {
+  --primary-pale-color: hsl(225, 100%, 94%);
+  --primary-bright-color: hsl(245, 75%, 52%);
+
+  --neutral-pale-color: hsl(225, 100%, 98%);
+  --neutral-desaturated-color: hsl(224, 23%, 55%);
+  --neutral-dark-color: hsl(223, 47%, 23%);
+
+  --main-ff: 'Red Hat Display', sans-serif;
+
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+html {
+  font-family: var(--main-ff);
+}
+
+p {
+  font-size: 16px;
+}
+
+/* CSS main styles */
+
+body {
+  background-color: var(--primary-pale-color);
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: repeat-x;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--neutral-pale-color);
+  max-width: 450px;
+  max-height: 700px;
+  border-radius: 20px;
+  /* Hide image corners that don't get border radius */
+  overflow: hidden;
+  box-shadow: 0px 20px 60px -30px var(--neutral-desaturated-color);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
