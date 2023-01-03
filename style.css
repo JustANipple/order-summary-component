@@ -169,6 +169,7 @@ h1 {
   font-weight: var(--fw-black);
 }
 
+/* Media query for the mobile part */
 @media screen and (max-width: 460px) {
   body {
     background-image: url(images/pattern-background-mobile.svg);
@@ -192,6 +193,3 @@ h1 {
     font-size: 0.9rem;
   }
 }
-
-
-
